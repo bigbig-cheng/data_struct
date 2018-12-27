@@ -2,9 +2,6 @@ package cn.cy.data_struct.stack.postfix;
 
 import java.util.Stack;
 
-/**
- * Created by jiangyi on 2018/12/25.
- */
 public class FixExpression {
 
     /**
