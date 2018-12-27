@@ -84,34 +84,34 @@ public class FixExpression {
     public static Float calc(String postFix){
 
         char[] chars = postFix.toCharArray();
-        Stack<String> stack = new Stack<>();
+        Stack<Float> stack = new Stack<>();
 
         Float a,b,tmp;
         for(char c : chars){
             switch (c) {
                 case '+' :
-                    tmp = Float.valueOf(stack.pop())+Float.valueOf(stack.pop());
-                    stack.push(tmp.toString());
+                    tmp = stack.pop() + stack.pop();
+                    stack.push(tmp);
                     break;
                 case '-' :
-                    a = Float.valueOf(stack.pop());
-                    b = Float.valueOf(stack.pop());
+                    a = stack.pop();
+                    b = stack.pop();
                     tmp = b - a;
-                    stack.push(tmp.toString());
+                    stack.push(tmp);
                     break;
                 case '*' :
-                    tmp = Float.valueOf(stack.pop())*Float.valueOf(stack.pop());
-                    stack.push(tmp.toString());
+                    tmp = stack.pop() * stack.pop();
+                    stack.push(tmp);
                     break;
                 case '/' :
-                    a = Float.valueOf(stack.pop());
-                    b = Float.valueOf(stack.pop());
+                    a = stack.pop();
+                    b = stack.pop();
                     tmp = b/a;
-                    stack.push(tmp.toString());
+                    stack.push(tmp);
                     break;
                 default:
                     // 数字压入栈中
-                    stack.push(String.valueOf(c));
+                    stack.push(Float.valueOf(c));
                     break;
             }
         }
